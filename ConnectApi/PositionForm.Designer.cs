@@ -33,7 +33,7 @@ namespace ConnectApi
             this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridViewPosition = new System.Windows.Forms.DataGridView();
-            this.listPosition = new System.Windows.Forms.ListBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPosition)).BeginInit();
@@ -71,7 +71,7 @@ namespace ConnectApi
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.Controls.Add(this.dataGridViewPosition, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.listPosition, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.button1, 0, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 48);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -91,15 +91,15 @@ namespace ConnectApi
             this.dataGridViewPosition.Size = new System.Drawing.Size(391, 393);
             this.dataGridViewPosition.TabIndex = 0;
             // 
-            // listPosition
+            // button1
             // 
-            this.listPosition.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listPosition.FormattingEnabled = true;
-            this.listPosition.ItemHeight = 20;
-            this.listPosition.Location = new System.Drawing.Point(3, 3);
-            this.listPosition.Name = "listPosition";
-            this.listPosition.Size = new System.Drawing.Size(391, 393);
-            this.listPosition.TabIndex = 1;
+            this.button1.Location = new System.Drawing.Point(3, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(94, 29);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // PositionForm
             // 
@@ -124,7 +124,7 @@ namespace ConnectApi
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.DataGridView dataGridViewPosition;
-        private System.Windows.Forms.ListBox listPosition;
+        private System.Windows.Forms.Button button1;
     }
 }
 

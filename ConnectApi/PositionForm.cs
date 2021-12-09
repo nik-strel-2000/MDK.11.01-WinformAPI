@@ -2,8 +2,10 @@
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Net.Http;
 using System.Text;
+
 using System.Windows.Forms;
 
 namespace ConnectApi
@@ -15,7 +17,7 @@ namespace ConnectApi
             InitializeComponent();
         }
 
-        //Возврат Слиента для работы запроса
+        //Возврат Клиента для работы запроса
         public HttpClient RequstClient()
         {
             HttpClient client = new HttpClient();
@@ -38,32 +40,33 @@ namespace ConnectApi
         }
 
         //Загрузка Списка
-        public void LoadList()
-        {
-            var posts = RequstPost();
-            List<string> posts1 = new List<string>();
-            foreach(Post post in posts)
-            {
-                posts1.Add($"{post.Name}");
-            }
-            listPosition.Items.AddRange(posts1.ToArray());
-        }
+        //public void LoadList()
+        //{
+        //    var posts = RequstPost();
+        //    List<string> posts1 = new List<string>();
+        //    foreach(Post post in posts)
+        //    {
+        //        posts1.Add($"{post.Name}");
+        //    }
+        //    listPosition.Items.AddRange(posts1.ToArray());
+        //}
         //Загрузка формы
         private void Form1_Load(object sender, EventArgs e)
         {
             LoadDataGrid();
-            LoadList();
+           // LoadList();
         }
 
         //МЕТОДЫ ДЛЯ ОБРАЩЕНИЯ 
         //POST-----------------------------------
-        public void UserPost(Post post)
+        public void JsonPost(Json json, int i)
         {
             HttpClient client = RequstClient();
             //В моделе не должно быть заполнено поле id
-            string jsonString = JsonConvert.SerializeObject(post);
+            json.Id = i;
+            string jsonString = JsonConvert.SerializeObject(json);
             HttpContent httpContent = new StringContent(jsonString, Encoding.UTF8, "application/json");
-            HttpResponseMessage responseMessage = client.PostAsync("api/Posts", httpContent).GetAwaiter().GetResult();
+            HttpResponseMessage responseMessage = client.PostAsync("api/Jsons", httpContent).GetAwaiter().GetResult();
         }
 
         //PUT------------------------------------
@@ -91,8 +94,18 @@ namespace ConnectApi
             HttpClient client = RequstClient();
             HttpResponseMessage response = client.DeleteAsync($@"api/Post/{id}").Result;
         }
+        //Сериализация Json
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int i = 1;
+            string file = File.ReadAllText("C:\\Users\\Nik\\Desktop\\json.json");
+            List<Json> person = System.Text.Json.JsonSerializer.Deserialize<List<Json>>(file);
+            foreach (Json json in person)
+            {
+                JsonPost(json,i);
+                i++;
+            }
 
-
-
+        }
     }
 }
