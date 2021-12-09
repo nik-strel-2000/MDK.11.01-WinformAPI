@@ -1,5 +1,5 @@
 # MDK.11.01-WinformAPI
 Создание winform приложения для МДК 11.01
-Ссылки на видео: 1 Часть(https://vk.com/im?peers=246428138&sel=462566129&z=video501544339_456239169%2Fb2a001f9de3b4bed91)
+Ссылки на видео: 1 Часть(https://drive.google.com/file/d/1xORxVWfjNW7bOETKuyHV8YTGLiscGBFB/view?usp=sharing)
 
-2 Часть(https://vk.com/im?peers=246428138&sel=462566129&z=video501544339_456239170%2F4171e5b0ef561be829)
+2 Часть(https://drive.google.com/file/d/1SeMhvPSSazTezkI1VcaBqNsI6sliJ6n-/view?usp=sharing)
